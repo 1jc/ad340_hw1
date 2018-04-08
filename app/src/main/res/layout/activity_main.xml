@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:visibility="visible"
     tools:context=".MainActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -13,14 +14,21 @@
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="top|center" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -29,5 +37,25 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_dialog_email" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="419dp"
+        android:layout_height="304dp"
+        android:contentDescription="      First Android Project for the class AD 340 First Android Project"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Joette Damo First Android Project for AD 340"
+        tools:text="     Joette Damo First Android Project for AD 340"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="Send Button"
+        android:text="Send"
+        android:visibility="visible"
+        tools:text="Send Button" />
 
 </android.support.design.widget.CoordinatorLayout>
